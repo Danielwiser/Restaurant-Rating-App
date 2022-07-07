@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Testing Landing Page</title>
+</head>
+
+<body>
+    <h1>Restaurant Rating Landing Page</h1>
+    <form action="/rate" method="post">
+        <label for="nameOfRestaurant">Restaurant Name</label>
+        <input type="text" name="nameOfRestaurant" placeholder="Name of Restaurant"><br><br>
+
+        <label for="foodQuality">Quality of Food</label>
+        <input type="range" name="foodQuality" id="" required max="5" min="1"><br>
+
+        <label for="hygiene">Hygiene</label>
+        <input type="range" name="hygiene" id="" required max="5" min="1"><br>
+
+        <label for="cost">Cost</label>
+        <input type="range" name="cost" id="" required max="5" min="1"><br>
+
+        <label for="customerService">Customer Service</label>
+        <input type="range" name="customerService" id="" required max="5" min="1"><br>
+
+        <label for="comments">Add your comments</label>
+        <input type="text" name="comments"><br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <h2> Restaurants Rated </h2>
+
+    <ul>
+
+        <% for(var i=0; i < rate.length; i++) {%>
+            <li class="rate">
+                <span>
+                    <h4>
+                        <%= rate[i].nameOfRestaurant %>
+                    </h4>
+                </span>
+                <span>
+                    Food Quality :<%= rate[i].foodQuality %>
+                </span><br>
+                <span>
+                    Hygyiene: <%= rate[i].hygiene %>
+                </span><br>
+                <span>
+                    Cost: <%= rate[i].cost %>
+                </span><br>
+                <span>
+                    Customer Service: <%= rate[i].customerService %>
+                </span><br>
+                <span>
+                    Comments: <%= rate[i].comments %>
+                </span><br>
+                <span>
+                    Number of Votes: <%= rate[i].numberOfRaters %>
+                </span>
+            </li>
+            <% } %>
+
+    </ul>
+
+</body>
+
+</html>
