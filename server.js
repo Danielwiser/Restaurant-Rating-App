@@ -10,7 +10,7 @@ app.use(express.static('public'))
 
 var db, collection;
 
-const url = 'mongodb+srv://db_restaurant:db_restaurant@cluster0.taw0is4.mongodb.net/?retryWrites=true&w=majority';
+const url = 'mongodb+srv://username:password@cluster0.taw0is4.mongodb.net/?retryWrites=true&w=majority';
 const dbName = "demo";
 
 // Make the server run on the chosen port
